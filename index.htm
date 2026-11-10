@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Atlas Arcadia - Virtual Tour</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" id="metaViewport" content="initial-scale=1, width=device-width, viewport-fit=cover" data-tdv-general-scale="1"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="preload" href="assets/fonts/FunnelDisplay.ttf" as="font" type="font/ttf" crossorigin>
+    <script src="preloader.js?v=atlas-v1" defer></script>
+    <script src="lib/tdvplayer.js?v=1794309155502" defer></script>
+    <link rel="preload" href="locale/en.txt?v=1794309155502" as="fetch" crossorigin="anonymous"/>
+	<link rel="preload" href="script.js?v=atlas-v2" as="script"/>
+		<link rel="preload" href="media/panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108_0/r/2/0_0.webp?v=1794309155502" as="image"/>
+	<link rel="preload" href="media/panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108_0/l/2/0_0.webp?v=1794309155502" as="image"/>
+	<link rel="preload" href="media/panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108_0/u/2/0_0.webp?v=1794309155502" as="image"/>
+	<link rel="preload" href="media/panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108_0/d/2/0_0.webp?v=1794309155502" as="image"/>
+	<link rel="preload" href="media/panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108_0/f/2/0_0.webp?v=1794309155502" as="image"/>
+	<link rel="preload" href="media/panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108_0/b/2/0_0.webp?v=1794309155502" as="image"/>
+	<meta property="og:title" content="Atlas Arcadia - Virtual Tour" />
+	<meta property="og:type" content="website" />
+	<meta property="og:description" content="Virtual Tour" />
+	<meta property="og:url" content="https://360plus.id/arcadia-tour/index.htm" />
+	<meta property="og:image" content="https://360plus.id/arcadia-tour/socialThumbnail.jpg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="fb:app_id" content="817622095004141" />
+	<link rel="image_src" href="https://360plus.id/arcadia-tour/socialThumbnail.jpg?v=1794309155502">
+	<meta property="og:locale" content="en"/>
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:title" content="Atlas Arcadia - Virtual Tour"/>
+	<meta name="twitter:description" content="Virtual Tour"/>
+	<meta name="twitter:url" content="https://360plus.id/arcadia-tour/index.htm"/>
+	<meta name="twitter:image" content="https://360plus.id/arcadia-tour/socialThumbnail.jpg?v=1794309155502"/>
+	<meta name="description" content="Virtual Tour"/>
+	<meta name="theme-color" content="#FFFFFF"/>
+    <script src="script.js?v=atlas-v2" defer></script>
+    <style type="text/css">
+        html, body { height:100%; width:100%; height:100vh; width:100vw; margin:0; padding:0; overflow:hidden; }
+        .fill-viewport { position:fixed; top:0; left:0; right:0; bottom:0; padding:0; margin:0; overflow: hidden; }
+        .fill-viewport.landscape-left { left: env(safe-area-inset-left); }
+		.fill-viewport.landscape-right { right: env(safe-area-inset-right); }
+        #viewer { z-index:1; }
+        @font-face {
+            font-family: "Funnel Display";
+            src: url("assets/fonts/FunnelDisplay.ttf") format("truetype");
+            font-weight: 300 800;
+            font-display: swap;
+        }
+        #preloadContainer {
+            position: fixed;
+            inset: 0;
+            z-index: 3000;
+            display: grid;
+            place-items: center;
+            background: #fff;
+            color: #000;
+            font-family: "Funnel Display", system-ui, sans-serif;
+        }
+        noscript { position: fixed; inset: 0; z-index: 3001; display: grid; place-items: center; background: #fff; padding: 24px; font: 1rem system-ui, sans-serif; }
+        #preloadContainer[hidden] { display: none; }
+        .tour-preloader { width: min(280px, calc(100vw - 56px)); text-align: center; }
+        .tour-preloader-value {
+            display: block;
+            margin-bottom: 16px;
+            font-size: clamp(44px, 8vw, 76px);
+            font-weight: 500;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: -.055em;
+            line-height: 1;
+        }
+        .tour-preloader-line { height: 2px; background: #dedede; }
+        .tour-preloader-fill {
+            display: block;
+            height: 100%;
+            background: #000;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 140ms linear;
+        }
+        .tour-preloader-recovery { margin-top: 20px; font-size: 14px; }
+        .tour-preloader-recovery button {
+            padding: 6px 12px;
+            border: 1px solid #000;
+            background: #fff;
+            color: #000;
+            font: inherit;
+            cursor: pointer;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .tour-preloader-fill { transition: none; }
+        }
+    </style>
+    <link rel="stylesheet" href="sidebar.css?v=atlas-v2">
+    <link rel="stylesheet" href="live-map.css?v=atlas-v4">
+    
+</head>
+<body>
+    <noscript>Aktifkan JavaScript untuk membuka tur 360° Atlas Arcadia.</noscript>
+    <div id="preloadContainer">
+      <div class="tour-preloader">
+        <span class="tour-preloader-value" id="tour-preloader-value" aria-hidden="true">0%</span>
+        <div class="tour-preloader-line" id="tour-preloader-line" role="progressbar" aria-label="Memuat tur virtual" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <span class="tour-preloader-fill" id="tour-preloader-fill"></span>
+        </div>
+        <div class="tour-preloader-recovery" id="tour-preloader-recovery" hidden>
+          <p id="tour-preloader-message" role="status">Tur masih dimuat.</p>
+          <button type="button" id="tour-preloader-retry">Muat ulang</button>
+        </div>
+      </div>
+    </div>
+    <div id="viewer" class="fill-viewport" aria-label="Panorama interaktif Atlas Arcadia"></div>
+    <aside class="live-map" id="live-map" aria-label="Peta live Atlas Arcadia" hidden>
+      <header class="live-map-header">
+        <button class="live-map-toggle" id="live-map-toggle" type="button" aria-controls="live-map-content" aria-expanded="false" title="Buka Peta Live">
+          <svg class="live-map-pin-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 10c0 5-7 10-7 10S5 15 5 10a7 7 0 1 1 14 0Z"/>
+            <circle cx="12" cy="10" r="2.5"/>
+          </svg>
+          <span>Peta Live</span>
+          <span class="live-map-north" aria-hidden="true">
+            <svg viewBox="0 0 12 14"><path d="M6 1 11 12 6 9 1 12Z"/></svg>
+            U
+          </span>
+          <svg class="live-map-toggle-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+        </button>
+        <p class="live-map-location" role="status">
+          <span class="live-map-location-caption">Anda di sini</span>
+          <strong id="live-map-label">Mencari spot aktif…</strong>
+        </p>
+      </header>
+      <div id="live-map-content" hidden>
+        <p class="live-map-instruction">Pilih pin untuk pindah spot.</p>
+        <div class="live-map-frame">
+          <svg class="live-map-plan" id="live-map-plan" viewBox="180 40 1070 920" aria-hidden="true">
+            <image href="assets/image/denah-live.svg?v=20261109-r4" x="180" y="40" width="1070" height="920"/>
+            <g class="live-map-landmarks">
+              <text x="952" y="174" text-anchor="end">Akses masuk</text>
+              <text x="849" y="798" text-anchor="middle">Clubhouse</text>
+            </g>
+            <g class="live-map-guides" id="live-map-guides"></g>
+            <g id="live-map-marker" visibility="hidden">
+              <circle class="live-map-halo" r="41"/>
+              <g id="live-map-heading">
+                <!-- Keep the rotation bounds centered on the marker. -->
+                <circle r="108" fill="none" stroke="none"/>
+                <path d="M0 -105 18 -75 0 -82 -18 -75Z"/>
+              </g>
+              <path class="live-map-pin" d="M0 0c-12-14-28-26-28-44a28 28 0 0 1 56 0C28-26 12-14 0 0Z"/>
+              <circle class="live-map-pin-center" cy="-44" r="9"/>
+            </g>
+          </svg>
+          <div class="live-map-destinations" id="live-map-destinations" role="group" aria-label="Pin tujuan pada denah"></div>
+        </div>
+        <p class="live-map-detail" id="live-map-detail"></p>
+        <form class="live-map-jump" id="live-map-jump">
+          <select id="live-map-jump-scene" aria-label="Pilih spot interior atau aerial" required>
+            <option value="">Interior atau aerial</option>
+          </select>
+          <button type="submit">Pindah</button>
+        </form>
+        <p class="live-map-feedback" id="live-map-feedback" role="status"></p>
+      </div>
+    </aside>
+    <!-- Identitas, konten Explore, dan kontak marketing. -->
+    <script>
+      window.ATLAS_TOUR_CONFIG = {
+        brand: 'Atlas Arcadia',
+        logoUrl: 'arcadia.logo.png',
+        mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4440.623922546856!2d109.27134601105605!3d-7.42318019255642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655f588a9d188b%3A0x25b0ce6078c54d8a!2sATLAS%20ARCADIA%20LEDUG!5e1!3m2!1sen!2sid!4v1794191560683!5m2!1sen!2sid',
+        marketingContacts: [
+          { name: 'Irma', number: '085194354851' },
+          { name: 'Intan', number: '0821-3302-2272' }
+        ],
+        brochurePages: [
+          { url: 'assets/image/brosur-cover.jpeg', label: 'Sampul brosur' },
+          { url: 'assets/image/brosur-isi.jpeg', label: 'Isi brosur' },
+          { url: 'assets/image/denah.jpeg', label: 'Denah kawasan' }
+        ]
+      };
+    </script>
+    <script src="sidebar.js?v=atlas-v2" defer></script>
+    <script src="live-map.js?v=atlas-v4" defer></script>
+</body>
+</html>

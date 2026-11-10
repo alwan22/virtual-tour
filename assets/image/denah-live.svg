@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="180 40 1070 920">
+  <!-- Site outline and blocks traced from denah.jpeg at a 1500px reference width. -->
+  <defs>
+    <linearGradient id="roads" x2="0" y2="1">
+      <stop stop-color="#677772"/>
+      <stop offset="1" stop-color="#50625e"/>
+    </linearGradient>
+    <linearGradient id="blocks" x2="0" y2="1">
+      <stop stop-color="#9caa9a"/>
+      <stop offset="1" stop-color="#819586"/>
+    </linearGradient>
+  </defs>
+  <path d="M794 78 1208 131 M1007 104 1012 258" fill="none" stroke="#73827b" stroke-width="38" stroke-linecap="round"/>
+  <path d="M794 78 1208 131" fill="none" stroke="#b2bfb0" stroke-width="3" stroke-dasharray="13 17" stroke-linecap="round"/>
+  <path d="M987 245 1033 246 1077 802 738 804 756 936 570 946 464 915
+           302 915 269 710 193 689 217 610 260 556 271 660 517 648
+           522 533 468 534 450 471 556 471 554 522 783 518 781 396
+           909 401 907 241Z" fill="url(#roads)" stroke="#63776d" stroke-width="8" stroke-linejoin="round"/>
+  <g fill="#435e51" stroke="#435e51" stroke-width="6" stroke-linejoin="round">
+    <path d="M193 689 217 610 260 556 271 660 371 651 376 706 272 717Z"/>
+    <path d="M375 662 520 660 519 704 377 714Z"/>
+    <path d="M454 470 554 471 554 523 783 517 781 397 806 401 813 540 522 558 522 532 468 534Z"/>
+    <path d="M910 241 944 245 950 395 917 399Z"/>
+    <path d="M466 896 568 886 571 937 478 936Z"/>
+  </g>
+  <g fill="url(#blocks)" stroke="#a7b2a3" stroke-width="5" stroke-linejoin="round">
+    <path d="M979 302 1042 294 1076 800 1011 801Z"/>
+    <path d="M834 438 952 425 972 668 845 677Z"/>
+    <path d="M549 584 813 563 822 683 559 703Z"/>
+    <path d="M371 746 684 724 693 840 390 867Z"/>
+    <path d="M277 716 342 709 363 905 302 914Z"/>
+    <path d="M571 883 734 866 756 936 576 945Z"/>
+  </g>
+  <path d="M715 723 975 703 981 802 720 803Z" fill="#b2a27f" stroke="#d2c3a1" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M922 302 939 300 942 336 925 338Z" fill="#b2a27f" stroke="#b2a27f" stroke-width="5" stroke-linejoin="round"/>
+</svg>
