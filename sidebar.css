@@ -507,6 +507,35 @@
   display: none;
 }
 
+.ql-sidebar:not(.is-collapsed) .ql-sidebar-footer:has(#ql-btn-gyro:not([hidden])) {
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.ql-sidebar:not(.is-collapsed) .ql-sidebar-footer:has(#ql-btn-gyro:not([hidden])) .ql-control-btn {
+  gap: 5px;
+  padding-inline: 7px;
+}
+
+#ql-btn-gyro {
+  min-height: 44px;
+  white-space: nowrap;
+}
+
+#ql-btn-gyro.active {
+  color: #f3ce8b;
+}
+
+.ql-sidebar.is-collapsed #ql-btn-gyro {
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ql-sidebar.is-collapsed #ql-btn-gyro .ql-control-label {
+  display: block;
+  font-size: 10px;
+}
+
 /* Explore dialog */
 .ql-modal-card::backdrop {
   background: rgba(0, 0, 0, 0.75);
