@@ -19,7 +19,8 @@
     phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 17v3a2 2 0 0 1-2.2 2A19.7 19.7 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7l.5 2.8a2 2 0 0 1-.6 2.1L7.6 10a16 16 0 0 0 6.4 6.4l1.4-1.3a2 2 0 0 1 2.1-.6l2.8.5A2 2 0 0 1 22 17Z"/></svg>',
     fullscreen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg>',
     sound: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h4l5-4v14l-5-4H3zM16 9c2 2 2 4 0 6m3-9c4 4 4 8 0 12"/></svg>',
-    mute: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h4l5-4v14l-5-4H3zM17 9l5 6m0-6-5 6"/></svg>'
+    mute: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h4l5-4v14l-5-4H3zM17 9l5 6m0-6-5 6"/></svg>',
+    gyro: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="4" width="8" height="16" rx="2" transform="rotate(-18 12 12)"/><path d="M4 5a8 8 0 0 0-2 6m20 2a8 8 0 0 1-2 6"/></svg>'
   };
   var root;
   var currentScenes = [];
@@ -293,6 +294,25 @@
       button.querySelector('.ql-control-icon').innerHTML = muted ? icons.mute : icons.sound;
       button.querySelector('.ql-control-label').textContent = muted ? 'Muted' : 'Sound';
     }
+    updateGyroscope(api.getGyroscopeEnabled());
+  }
+  function updateGyroscope(enabled) {
+    var button = id('ql-btn-gyro');
+    button.hidden = enabled === null;
+    if (button.hidden) return;
+    button.classList.toggle('active', enabled);
+    button.setAttribute('aria-pressed', String(enabled));
+    button.title = enabled ? 'Matikan giroskop' : 'Aktifkan giroskop';
+    button.querySelector('.ql-control-label').textContent = enabled ? 'Gyro On' : 'Gyro Off';
+  }
+  function toggleGyroscope() {
+    var api = bridge();
+    var enabled = api ? api.getGyroscopeEnabled() : null;
+    if (enabled === null || !api.setGyroscopeEnabled(!enabled)) {
+      notice('Giroskop belum bisa diubah pada perangkat ini.');
+      return;
+    }
+    requestAnimationFrame(syncFromTour);
   }
   function toggleFullscreen() {
     var action = document.fullscreenElement ? document.exitFullscreen() :
@@ -350,6 +370,9 @@
         <button class="ql-control-btn" id="ql-btn-sound" type="button" aria-pressed="false">\
           <span class="ql-control-icon"></span><span class="ql-control-label">Sound</span>\
         </button>\
+        <button class="ql-control-btn" id="ql-btn-gyro" type="button" aria-label="Giroskop" aria-pressed="false" hidden>\
+          <span class="ql-control-icon"></span><span class="ql-control-label">Gyro Off</span>\
+        </button>\
       </footer>';
     document.body.appendChild(root);
     mountExplore();
@@ -370,6 +393,8 @@
     }
     id('ql-btn-sound').querySelector('.ql-control-icon').innerHTML = icons.sound;
     id('ql-btn-fullscreen').querySelector('.ql-control-icon').innerHTML = icons.fullscreen;
+    id('ql-btn-gyro').querySelector('.ql-control-icon').innerHTML = icons.gyro;
+    id('ql-btn-gyro').addEventListener('click', toggleGyroscope);
     id('ql-collapse-toggle').addEventListener('click', function () { markCollapsed(!isCollapsed); });
     id('ql-brand-btn').addEventListener('click', function () { if (isCollapsed) markCollapsed(false); });
     id('ql-btn-fullscreen').hidden = !document.fullscreenEnabled;
@@ -382,7 +407,7 @@
     markCollapsed(isCollapsed);
     renderManifest();
     // Hotspot dapat mengganti panorama tanpa aksi dari sidebar; polling ringan
-    // menyelaraskan scene dan mute dengan kondisi player yang sebenarnya.
+    // menyelaraskan scene, suara, dan giroskop dengan kondisi player.
     setInterval(function () {
       if (document.visibilityState !== 'hidden') {
         if (!currentScenes.length) renderManifest();

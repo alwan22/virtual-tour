@@ -4,7 +4,7 @@ if(!Object['hasOwnProperty']('values')){Object['values']=function(c){return Obje
 //
 
 var tour;
-var devicesUrl = {"general":"script_general.js?v=atlas-v2"};
+var devicesUrl = {"general":"script_general.js?v=atlas-v4"};
 
 (function()
 {
@@ -235,6 +235,12 @@ document.addEventListener('DOMContentLoaded', onLoad);
     return window.AtlasTourManifest && Array.isArray(window.AtlasTourManifest.scenes)
       ? window.AtlasTourManifest.scenes : [];
   }
+  function gyroscopePlayer() {
+    var root = rootPlayer();
+    if (!window.tour?.isInitialized || !root?.get('isMobile') || !root.get('gyroscopeAvailable')) return null;
+    // All spots in this export share the same panorama player.
+    return window.tour.player.getById('MainViewerPanoramaPlayer');
+  }
   window.AtlasTourBridge = {
     isReady: function () {
       return !!(window.tour && window.tour.isInitialized && rootPlayer() && scenes().length);
@@ -273,6 +279,21 @@ document.addEventListener('DOMContentLoaded', onLoad);
       if (!root) return null;
       try { return !!root.get('mute'); }
       catch (error) { return null; }
+    },
+    getGyroscopeEnabled: function () {
+      try {
+        var player = gyroscopePlayer();
+        return player ? !!player.get('gyroscopeEnabled') : null;
+      } catch (error) { return null; }
+    },
+    setGyroscopeEnabled: function (enabled) {
+      try {
+        var player = gyroscopePlayer();
+        if (!player) return false;
+        // Use the player control so 3DVista handles any browser permission prompt.
+        player.set('gyroscopeEnabled', !!enabled);
+        return true;
+      } catch (error) { return false; }
     },
     setMuted: function (muted) {
       var root = rootPlayer();
