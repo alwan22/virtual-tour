@@ -1,0 +1,876 @@
+{
+  "coords": {
+    "panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108": [
+      1008,
+      281,
+      78
+    ],
+    "panorama_D3A46579_C330_7A67_41E3_32A506968BD8": [
+      963,
+      271,
+      5
+    ],
+    "panorama_D00CF0D2_C351_FAA5_41C4_B4B394FEA783": [
+      967,
+      416,
+      -21
+    ],
+    "panorama_D0CF9223_C330_B9EB_41D3_04C0498C7725": [
+      815,
+      423,
+      -23
+    ],
+    "panorama_D73F4122_C3F0_7BE5_41E1_C8423B04CA07": [
+      822,
+      544,
+      23
+    ],
+    "panorama_D61FF245_C370_59AF_41E4_4F9B77D44204": [
+      976,
+      553,
+      177
+    ],
+    "panorama_C9A24A47_C47C_FDEC_41DA_811C8EC63CE9": [
+      532,
+      721,
+      97
+    ],
+    "panorama_B7BC5E8D_BA9C_1D50_41E0_5356BE539A67": [
+      535,
+      874,
+      147
+    ],
+    "panorama_B6828E17_BB50_D2CB_41C1_F4AC0CC32FB8": [
+      370,
+      888,
+      -176
+    ],
+    "panorama_B67EE91C_BB51_7EFE_41C1_9656F25D7F9D": [
+      711,
+      858,
+      72
+    ],
+    "panorama_B50680D9_BB50_EF46_41D7_C4DFCC6CE678": [
+      443,
+      725,
+      122
+    ],
+    "panorama_B69AA859_BB50_BF47_41E5_0EF6B7537875": [
+      704,
+      711,
+      -4
+    ],
+    "panorama_D410B54F_C373_DBBB_41E0_65D6E2677004": [
+      828,
+      701,
+      -2
+    ],
+    "panorama_D5607026_C493_2DAC_41CF_282947461FEE": [
+      650,
+      550,
+      101
+    ],
+    "panorama_D17C6699_C4EF_5564_41E6_3541207B1453": [
+      355,
+      730,
+      152
+    ],
+    "panorama_D218CCB6_C4AD_36AC_41D1_1361951BE8E8": [
+      990,
+      689,
+      82
+    ],
+    "panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045": [
+      849,
+      753
+    ]
+  },
+  "rows": [
+    {
+      "source": "panorama_BDD6290C_BD84_B04D_41D8_5A63452A8DFB",
+      "label": "Int 7",
+      "target": "panorama_DEA66F5A_C351_A7A5_41DA_29F1F0AF6E76",
+      "targetLabel": "Gym Area",
+      "yaw": 51.62,
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_DA133375_C371_DE6F_41E5_D171AD4DE588",
+      "pitch": 1.64
+    },
+    {
+      "source": "panorama_BDD6290C_BD84_B04D_41D8_5A63452A8DFB",
+      "label": "Int 7",
+      "target": "panorama_DB22DFCA_C370_66A5_41A6_2F0CF6E6E27B",
+      "targetLabel": "2nd Floor Junction",
+      "yaw": 35.63,
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_DA3CD946_C370_ABAD_41DB_490FF4C03FEE",
+      "pitch": 1.66
+    },
+    {
+      "source": "panorama_D61FF245_C370_59AF_41E4_4F9B77D44204",
+      "label": "Boulevard B",
+      "target": "panorama_D00CF0D2_C351_FAA5_41C4_B4B394FEA783",
+      "targetLabel": "Boulevard A",
+      "yaw": 179.91,
+      "bearing": -3.758555685471997,
+      "delta": 0.6685556854720289,
+      "overlay": "overlay_D42E78F5_C370_6A6F_41B5_42151C161E51",
+      "pitch": -14.67
+    },
+    {
+      "source": "panorama_D61FF245_C370_59AF_41E4_4F9B77D44204",
+      "label": "Boulevard B",
+      "target": "panorama_D218CCB6_C4AD_36AC_41D1_1361951BE8E8",
+      "targetLabel": "Boulevard Corner Arcadia",
+      "yaw": -1.69,
+      "bearing": 174.12260739335687,
+      "delta": 1.1873926066431295,
+      "overlay": "overlay_D50DF0EC_C370_5A7D_41AD_1C9C7D602136",
+      "pitch": -13.55
+    },
+    {
+      "source": "panorama_B7BC5E8D_BA9C_1D50_41E0_5356BE539A67",
+      "label": "Park Near Clubhouse",
+      "target": "panorama_B67EE91C_BB51_7EFE_41C1_9656F25D7F9D",
+      "targetLabel": "Corner Behind Club House",
+      "yaw": -58.21,
+      "bearing": 84.8055710922652,
+      "delta": 3.9844289077348094,
+      "overlay": "overlay_3D6E31FC_BDBF_93CD_41E0_47B340095333",
+      "pitch": -23.33
+    },
+    {
+      "source": "panorama_B7BC5E8D_BA9C_1D50_41E0_5356BE539A67",
+      "label": "Park Near Clubhouse",
+      "target": "panorama_B6828E17_BB50_D2CB_41C1_F4AC0CC32FB8",
+      "targetLabel": "Corner Near Kost Eksklusif",
+      "yaw": 114.31,
+      "bearing": -94.84984390178282,
+      "delta": -3.8401560982172214,
+      "overlay": "overlay_3BA168A7_BDBC_907B_41E4_E65C020A2C91",
+      "pitch": -21.25
+    },
+    {
+      "source": "panorama_D73F4122_C3F0_7BE5_41E1_C8423B04CA07",
+      "label": "Junction A",
+      "target": "panorama_D0CF9223_C330_B9EB_41D3_04C0498C7725",
+      "targetLabel": "Corner A",
+      "yaw": -26.42,
+      "bearing": -3.3109415146114434,
+      "delta": -0.10905848538857299,
+      "overlay": "overlay_D6EC4420_C3F0_59E5_41D6_E2BE21C94CED",
+      "pitch": -10.19
+    },
+    {
+      "source": "panorama_D73F4122_C3F0_7BE5_41E1_C8423B04CA07",
+      "label": "Junction A",
+      "target": "panorama_D410B54F_C373_DBBB_41E0_65D6E2677004",
+      "targetLabel": "Arcadia Entrance",
+      "yaw": 151.45,
+      "bearing": 177.8114174395968,
+      "delta": -3.361417439596835,
+      "overlay": "overlay_D4D571C5_C350_5AAF_41B7_9190CF411809",
+      "pitch": -9.77
+    },
+    {
+      "source": "panorama_D73F4122_C3F0_7BE5_41E1_C8423B04CA07",
+      "label": "Junction A",
+      "target": "panorama_D5607026_C493_2DAC_41CF_282947461FEE",
+      "targetLabel": "Boulevard Near Park",
+      "yaw": -116.53,
+      "bearing": -91.99787985647669,
+      "delta": -1.5321201435233434,
+      "overlay": "overlay_D91EED3E_C4D0_6BDA_41D5_9ECEA698A9CD",
+      "pitch": -13.86
+    },
+    {
+      "source": "panorama_B69AA859_BB50_BF47_41E5_0EF6B7537875",
+      "label": "Junction C",
+      "target": "panorama_D410B54F_C373_DBBB_41E0_65D6E2677004",
+      "targetLabel": "Arcadia Entrance",
+      "yaw": 89.09,
+      "bearing": 85.3893506813394,
+      "delta": -0.2993506813394333,
+      "overlay": "overlay_E533E3E9_BD84_97F7_41B0_814D26BDE8A6",
+      "pitch": -22.33
+    },
+    {
+      "source": "panorama_B69AA859_BB50_BF47_41E5_0EF6B7537875",
+      "label": "Junction C",
+      "target": "panorama_B67EE91C_BB51_7EFE_41C1_9656F25D7F9D",
+      "targetLabel": "Corner Behind Club House",
+      "yaw": 179.85,
+      "bearing": 177.27368900609372,
+      "delta": -1.4236890060936958,
+      "overlay": "overlay_DD96838C_BD85_904D_41D9_830079D3E2D9",
+      "pitch": -20.43
+    },
+    {
+      "source": "panorama_B69AA859_BB50_BF47_41E5_0EF6B7537875",
+      "label": "Junction C",
+      "target": "panorama_C9A24A47_C47C_FDEC_41DA_811C8EC63CE9",
+      "targetLabel": "Junction B",
+      "yaw": -89.43,
+      "bearing": -93.32740424172658,
+      "delta": -0.1025957582734236,
+      "overlay": "overlay_0B3AFEFF_BD87_91CB_41E6_76DC22091A60",
+      "pitch": -23.3
+    },
+    {
+      "source": "panorama_B67EE91C_BB51_7EFE_41C1_9656F25D7F9D",
+      "label": "Corner Behind Club House",
+      "target": "panorama_B69AA859_BB50_BF47_41E5_0EF6B7537875",
+      "targetLabel": "Junction C",
+      "yaw": -73.25,
+      "bearing": -2.726310993906266,
+      "delta": 1.4763109939062815,
+      "overlay": "overlay_D70D21A4_BD83_907E_41E2_9B80E9E3B8BA",
+      "pitch": -24.16
+    },
+    {
+      "source": "panorama_B67EE91C_BB51_7EFE_41C1_9656F25D7F9D",
+      "label": "Corner Behind Club House",
+      "target": "panorama_B7BC5E8D_BA9C_1D50_41E0_5356BE539A67",
+      "targetLabel": "Park Near Clubhouse",
+      "yaw": -167.27,
+      "bearing": -95.19442890773483,
+      "delta": -0.07557109226513603,
+      "overlay": "overlay_C9A09CA6_BDBD_907D_41E3_8D2FF5FC2B00",
+      "pitch": -20.05
+    },
+    {
+      "source": "panorama_D5607026_C493_2DAC_41CF_282947461FEE",
+      "label": "Boulevard Near Park",
+      "target": "panorama_C9A24A47_C47C_FDEC_41DA_811C8EC63CE9",
+      "targetLabel": "Junction B",
+      "yaw": 172.07,
+      "bearing": -145.3920545894167,
+      "delta": 58.46205458941665,
+      "overlay": "overlay_D09D2FB7_C493_72AC_41E5_FFF7154AB856",
+      "pitch": -12.04
+    },
+    {
+      "source": "panorama_D5607026_C493_2DAC_41CF_282947461FEE",
+      "label": "Boulevard Near Park",
+      "target": "panorama_D73F4122_C3F0_7BE5_41E1_C8423B04CA07",
+      "targetLabel": "Junction A",
+      "yaw": -14.59,
+      "bearing": 88.00212014352331,
+      "delta": -1.5921201435232888,
+      "overlay": "overlay_D7C893EA_C495_32A4_41BA_2B5ED7FE0DE1",
+      "pitch": -15.66
+    },
+    {
+      "source": "panorama_B50680D9_BB50_EF46_41D7_C4DFCC6CE678",
+      "label": "Road Near Kost Eksklusif",
+      "target": "panorama_D17C6699_C4EF_5564_41E6_3541207B1453",
+      "targetLabel": "Kost Eklusif Corner",
+      "yaw": 147.38,
+      "bearing": -93.25194560036388,
+      "delta": 2.631945600363906,
+      "overlay": "overlay_BDC141DE_BDFC_F3CD_41E6_13F78F330BC4",
+      "pitch": -18.05
+    },
+    {
+      "source": "panorama_B50680D9_BB50_EF46_41D7_C4DFCC6CE678",
+      "label": "Road Near Kost Eksklusif",
+      "target": "panorama_C9A24A47_C47C_FDEC_41DA_811C8EC63CE9",
+      "targetLabel": "Junction B",
+      "yaw": -37.76,
+      "bearing": 87.42664053682319,
+      "delta": -3.1866405368232336,
+      "overlay": "overlay_BDC2A19D_BDFD_B04F_41DB_6F5BEB96C35A",
+      "pitch": -18.78
+    },
+    {
+      "source": "panorama_BDD63E94_BD84_905D_41C2_1384FE72245D",
+      "label": "Meering Room",
+      "target": "panorama_DB22DFCA_C370_66A5_41A6_2F0CF6E6E27B",
+      "targetLabel": "2nd Floor Junction",
+      "yaw": 92.35,
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_D8166870_C350_AA65_41A2_808DF86F0290",
+      "pitch": 5.48
+    },
+    {
+      "source": "panorama_DB22DFCA_C370_66A5_41A6_2F0CF6E6E27B",
+      "label": "2nd Floor Junction",
+      "target": "panorama_BDD6290C_BD84_B04D_41D8_5A63452A8DFB",
+      "targetLabel": "Int 7",
+      "yaw": -132.21,
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_DA0AE1E9_C373_DA67_41E3_CE7C288DB2B5",
+      "pitch": 1.4
+    },
+    {
+      "source": "panorama_DB22DFCA_C370_66A5_41A6_2F0CF6E6E27B",
+      "label": "2nd Floor Junction",
+      "target": "panorama_BDD63E94_BD84_905D_41C2_1384FE72245D",
+      "targetLabel": "Meering Room",
+      "yaw": 71.09,
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_DAB89DAF_C370_AAFB_41DD_D22806EA14FA",
+      "pitch": -1.59
+    },
+    {
+      "source": "panorama_DB22DFCA_C370_66A5_41A6_2F0CF6E6E27B",
+      "label": "2nd Floor Junction",
+      "target": "panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045",
+      "targetLabel": "Entrance Club House",
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_DF6E629F_C4D0_5EDC_41BA_6868610AA317",
+      "yaw": 18.87995440122512,
+      "pitch": -21.3975
+    },
+    {
+      "source": "panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108",
+      "label": "Entrance",
+      "target": "panorama_D3A46579_C330_7A67_41E3_32A506968BD8",
+      "targetLabel": "Entrace Gate",
+      "bearing": -77.47119229084849,
+      "delta": 3.8885035287677283,
+      "overlay": "overlay_D1413E2D_C353_E9FF_41B3_14BDCD006DEB",
+      "yaw": -151.58268876208078,
+      "pitch": -17.25
+    },
+    {
+      "source": "panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108",
+      "label": "Entrance",
+      "target": "panorama_DDBCBE51_C46D_35E7_41CB_9C1171193F3E",
+      "targetLabel": "DJI_20260521125642_0004_D",
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_DBA073CA_C597_32E4_41CE_EFF2EBC3AA72",
+      "yaw": -32.98756985574208,
+      "pitch": 23.1025
+    },
+    {
+      "source": "panorama_D17C6699_C4EF_5564_41E6_3541207B1453",
+      "label": "Kost Eklusif Corner",
+      "target": "panorama_B6828E17_BB50_D2CB_41C1_F4AC0CC32FB8",
+      "targetLabel": "Corner Near Kost Eksklusif",
+      "yaw": 22.87,
+      "bearing": 174.57678140322665,
+      "delta": 0.2932185967733858,
+      "overlay": "overlay_D03E02BB_C4ED_52A4_41E6_5D5E1A45AB2E",
+      "pitch": -13.03
+    },
+    {
+      "source": "panorama_D17C6699_C4EF_5564_41E6_3541207B1453",
+      "label": "Kost Eklusif Corner",
+      "target": "panorama_B50680D9_BB50_EF46_41D7_C4DFCC6CE678",
+      "targetLabel": "Road Near Kost Eksklusif",
+      "yaw": -68.32,
+      "bearing": 86.74805439963612,
+      "delta": -3.0680543996361394,
+      "overlay": "overlay_D18A90CA_C4EC_EEE5_41E6_7F6EAC0397F7",
+      "pitch": -13.56
+    },
+    {
+      "source": "panorama_DEA66F5A_C351_A7A5_41DA_29F1F0AF6E76",
+      "label": "Gym Area",
+      "target": "panorama_BDD6290C_BD84_B04D_41D8_5A63452A8DFB",
+      "targetLabel": "Int 7",
+      "yaw": -81.81,
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_DF3286A9_C350_A6E7_41E6_21425D90C2D1",
+      "pitch": 1.33
+    },
+    {
+      "source": "panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045",
+      "label": "Entrance Club House",
+      "target": "panorama_D2996BA6_C4AD_32AD_41CE_F81E45806414",
+      "targetLabel": "Mini Market",
+      "yaw": -109.46,
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_BDD96401_BD8C_B037_41C4_84994B680303",
+      "pitch": -2.73
+    },
+    {
+      "source": "panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045",
+      "label": "Entrance Club House",
+      "target": "panorama_BDD66892_BD84_B055_41E2_428D9FA3FD1F",
+      "targetLabel": "Cinema Room",
+      "yaw": 84.25,
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_B2D1FECC_BDE7_1C51_41CA_6230E35A3A6F",
+      "pitch": 0.94
+    },
+    {
+      "source": "panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045",
+      "label": "Entrance Club House",
+      "target": "panorama_D410B54F_C373_DBBB_41E0_65D6E2677004",
+      "targetLabel": "Arcadia Entrance",
+      "yaw": -29.39,
+      "bearing": -21.99112991717713,
+      "delta": null,
+      "overlay": "overlay_AD9CE622_BDE7_0FD1_41E1_7F53681ADB34",
+      "pitch": -18.68
+    },
+    {
+      "source": "panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045",
+      "label": "Entrance Club House",
+      "target": "panorama_BDD653D5_BD84_97DF_41E5_8A02F3488CE6",
+      "targetLabel": "Swimming Pool",
+      "yaw": -129.4,
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_AC580B17_BDEB_05FF_41C0_54760B9A2783",
+      "pitch": -1.8
+    },
+    {
+      "source": "panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045",
+      "label": "Entrance Club House",
+      "target": "panorama_DB22DFCA_C370_66A5_41A6_2F0CF6E6E27B",
+      "targetLabel": "2nd Floor Junction",
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_AC5FAEDB_BDED_FC70_41DC_45B1AE4EFAE6",
+      "yaw": -169.0249430980045,
+      "pitch": -23.76
+    },
+    {
+      "source": "panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045",
+      "label": "Entrance Club House",
+      "target": "panorama_BDD64947_BD84_F03B_41D0_E507DD81FC2D",
+      "targetLabel": "Laundry Room",
+      "yaw": 100.65,
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_D4AF696F_C371_AA7B_41CA_17D5B47BC2E9",
+      "pitch": 1.02
+    },
+    {
+      "source": "panorama_C9A24A47_C47C_FDEC_41DA_811C8EC63CE9",
+      "label": "Junction B",
+      "target": "panorama_D5607026_C493_2DAC_41CF_282947461FEE",
+      "targetLabel": "Boulevard Near Park",
+      "yaw": -98.76,
+      "bearing": 34.6079454105833,
+      "delta": -36.367945410583275,
+      "overlay": "overlay_CB2D6A5C_C47D_3D9C_41E8_251646505DC9",
+      "pitch": -10.22
+    },
+    {
+      "source": "panorama_C9A24A47_C47C_FDEC_41DA_811C8EC63CE9",
+      "label": "Junction B",
+      "target": "panorama_B50680D9_BB50_EF46_41D7_C4DFCC6CE678",
+      "targetLabel": "Road Near Kost Eksklusif",
+      "yaw": 167.44,
+      "bearing": -92.57335946317684,
+      "delta": -2.986640536823188,
+      "overlay": "overlay_D4A20E99_C473_7567_41E0_4507F5AEC08F",
+      "pitch": -11.88
+    },
+    {
+      "source": "panorama_C9A24A47_C47C_FDEC_41DA_811C8EC63CE9",
+      "label": "Junction B",
+      "target": "panorama_B69AA859_BB50_BF47_41E5_0EF6B7537875",
+      "targetLabel": "Junction C",
+      "yaw": -9.43,
+      "bearing": 86.67259575827342,
+      "delta": 0.8974042417265764,
+      "overlay": "overlay_D52C9481_C473_5564_41DA_AB93BC9E43C0",
+      "pitch": -9.76
+    },
+    {
+      "source": "panorama_D3A46579_C330_7A67_41E3_32A506968BD8",
+      "label": "Entrace Gate",
+      "target": "panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108",
+      "targetLabel": "Entrance",
+      "yaw": 80.53,
+      "bearing": 102.52880770915152,
+      "delta": -16.998807709151492,
+      "overlay": "overlay_D20309BF_C350_6ADB_41E1_E4162F536E24",
+      "pitch": -19.34
+    },
+    {
+      "source": "panorama_D3A46579_C330_7A67_41E3_32A506968BD8",
+      "label": "Entrace Gate",
+      "target": "panorama_D00CF0D2_C351_FAA5_41C4_B4B394FEA783",
+      "targetLabel": "Boulevard A",
+      "bearing": 178.4198275272,
+      "delta": -3.1330933717028984,
+      "overlay": "overlay_DFE75502_C4D0_7BA5_41DB_B27E8C107168",
+      "yaw": 170.28673415549704,
+      "pitch": -15.184999999999999
+    },
+    {
+      "source": "panorama_D3A46579_C330_7A67_41E3_32A506968BD8",
+      "label": "Entrace Gate",
+      "target": "panorama_D00CF0D2_C351_FAA5_41C4_B4B394FEA783",
+      "targetLabel": "Boulevard A",
+      "bearing": 178.4198275272,
+      "delta": 28.672157551469923,
+      "overlay": "overlay_D8372DB1_C4D0_AAE7_41BF_1E8E9B91AC26",
+      "yaw": -157.90801492133005,
+      "pitch": -16.0125
+    },
+    {
+      "source": "panorama_B6828E17_BB50_D2CB_41C1_F4AC0CC32FB8",
+      "label": "Corner Near Kost Eksklusif",
+      "target": "panorama_B7BC5E8D_BA9C_1D50_41E0_5356BE539A67",
+      "targetLabel": "Park Near Clubhouse",
+      "yaw": -82.31,
+      "bearing": 85.15015609821718,
+      "delta": 16.539843901782888,
+      "overlay": "overlay_BDB7331B_BD84_904B_41C5_0D2DC3FF2C23",
+      "pitch": -17.4
+    },
+    {
+      "source": "panorama_B6828E17_BB50_D2CB_41C1_F4AC0CC32FB8",
+      "label": "Corner Near Kost Eksklusif",
+      "target": "panorama_B50680D9_BB50_EF46_41D7_C4DFCC6CE678",
+      "targetLabel": "Road Near Kost Eksklusif",
+      "yaw": -176.47,
+      "bearing": 24.12535317354997,
+      "delta": -16.595353173549938,
+      "overlay": "overlay_BDB7D520_BD83_9075_41E2_FEF0A07E9F77",
+      "pitch": -27.37
+    },
+    {
+      "source": "panorama_D0CF9223_C330_B9EB_41D3_04C0498C7725",
+      "label": "Corner A",
+      "target": "panorama_D00CF0D2_C351_FAA5_41C4_B4B394FEA783",
+      "targetLabel": "Boulevard A",
+      "yaw": 108,
+      "bearing": 87.36324157385955,
+      "delta": -2.3632415738595682,
+      "overlay": "overlay_D067942E_C330_79FD_41CF_58D9C3B53AFB",
+      "pitch": -11.96
+    },
+    {
+      "source": "panorama_D0CF9223_C330_B9EB_41D3_04C0498C7725",
+      "label": "Corner A",
+      "target": "panorama_D73F4122_C3F0_7BE5_41E1_C8423B04CA07",
+      "targetLabel": "Junction A",
+      "yaw": -161.44,
+      "bearing": 176.68905848538856,
+      "delta": -1.1290584853885548,
+      "overlay": "overlay_DFB5FFBE_C4F0_A6DD_41E7_98DDA6ACC055",
+      "pitch": -15.24
+    },
+    {
+      "source": "panorama_D00CF0D2_C351_FAA5_41C4_B4B394FEA783",
+      "label": "Boulevard A",
+      "target": "panorama_D0CF9223_C330_B9EB_41D3_04C0498C7725",
+      "targetLabel": "Corner A",
+      "bearing": -92.63675842614045,
+      "delta": -0.4376512147756557,
+      "overlay": "overlay_D804D3A4_C4F1_BEED_41DC_9DC5ECB48DF5",
+      "yaw": -72.07440964091607,
+      "pitch": -12.932500000000001
+    },
+    {
+      "source": "panorama_D00CF0D2_C351_FAA5_41C4_B4B394FEA783",
+      "label": "Boulevard A",
+      "target": "panorama_D3A46579_C330_7A67_41E3_32A506968BD8",
+      "targetLabel": "Entrace Gate",
+      "yaw": 20.1,
+      "bearing": -1.5801724728000146,
+      "delta": 0.6801724727999954,
+      "overlay": "overlay_D0552CFF_C330_6A5B_41E3_D5499B85A984",
+      "pitch": -14.14
+    },
+    {
+      "source": "panorama_D00CF0D2_C351_FAA5_41C4_B4B394FEA783",
+      "label": "Boulevard A",
+      "target": "panorama_D61FF245_C370_59AF_41E4_4F9B77D44204",
+      "targetLabel": "Boulevard B",
+      "yaw": -161.15,
+      "bearing": 176.24144431452802,
+      "delta": 1.6085556854719698,
+      "overlay": "overlay_D743C574_C3F0_5A6D_41E0_0B00B9F77FA4",
+      "pitch": -16.22
+    },
+    {
+      "source": "panorama_D2996BA6_C4AD_32AD_41CE_F81E45806414",
+      "label": "Mini Market",
+      "target": "panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045",
+      "targetLabel": "Entrance Club House",
+      "yaw": -88.26,
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_D125DC52_C4AC_D5E4_41E3_67D5B8C315B2",
+      "pitch": -2.38
+    },
+    {
+      "source": "panorama_BDD64947_BD84_F03B_41D0_E507DD81FC2D",
+      "label": "Laundry Room",
+      "target": "panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045",
+      "targetLabel": "Entrance Club House",
+      "yaw": -163.88,
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_DB96B535_C377_DBEF_41E2_EC79D4C151DC",
+      "pitch": 1.9
+    },
+    {
+      "source": "panorama_DC921183_C5B3_2F64_41E4_9FC1B0478D65",
+      "label": "DJI_20260521130228_0012_D",
+      "target": "panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108",
+      "targetLabel": "Entrance",
+      "yaw": -166.43,
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_DBBA14BB_C595_56A4_41CA_446BBA3C0CA2",
+      "pitch": -9.65
+    },
+    {
+      "source": "panorama_D410B54F_C373_DBBB_41E0_65D6E2677004",
+      "label": "Arcadia Entrance",
+      "target": "panorama_D73F4122_C3F0_7BE5_41E1_C8423B04CA07",
+      "targetLabel": "Junction A",
+      "yaw": -2.67,
+      "bearing": -2.188582560403218,
+      "delta": -2.4814174395967257,
+      "overlay": "overlay_D4955CCA_C373_AAA5_41D6_1B92AF0D1EAB",
+      "pitch": -16.84
+    },
+    {
+      "source": "panorama_D410B54F_C373_DBBB_41E0_65D6E2677004",
+      "label": "Arcadia Entrance",
+      "target": "panorama_D218CCB6_C4AD_36AC_41D1_1361951BE8E8",
+      "targetLabel": "Boulevard Corner Arcadia",
+      "yaw": 90.16,
+      "bearing": 85.76360520094116,
+      "delta": 2.3963947990588395,
+      "overlay": "overlay_D48CCF50_C370_A7A5_41E6_458F51EF4724",
+      "pitch": -15.15
+    },
+    {
+      "source": "panorama_D410B54F_C373_DBBB_41E0_65D6E2677004",
+      "label": "Arcadia Entrance",
+      "target": "panorama_B69AA859_BB50_BF47_41E5_0EF6B7537875",
+      "targetLabel": "Junction C",
+      "yaw": -91.7,
+      "bearing": -94.6106493186606,
+      "delta": 0.9106493186606031,
+      "overlay": "overlay_D4496C8C_C371_EABD_41D9_C848DC51AD61",
+      "pitch": -9.53
+    },
+    {
+      "source": "panorama_D410B54F_C373_DBBB_41E0_65D6E2677004",
+      "label": "Arcadia Entrance",
+      "target": "panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045",
+      "targetLabel": "Entrance Club House",
+      "bearing": 158.00887008282288,
+      "delta": -5.4088756164760525,
+      "overlay": "overlay_D51F9C5B_C370_AA5B_41D1_B931D159C8D4",
+      "yaw": 154.5999944663468,
+      "pitch": -1.4725000000000001
+    },
+    {
+      "source": "panorama_DDBCBE51_C46D_35E7_41CB_9C1171193F3E",
+      "label": "DJI_20260521125642_0004_D",
+      "target": "panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108",
+      "targetLabel": "Entrance",
+      "yaw": -108.08,
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_DC71A38D_C46D_D37C_41C6_D269563D29F7",
+      "pitch": -47.09
+    },
+    {
+      "source": "panorama_DDBCBE51_C46D_35E7_41CB_9C1171193F3E",
+      "label": "DJI_20260521125642_0004_D",
+      "target": "panorama_DC921183_C5B3_2F64_41E4_9FC1B0478D65",
+      "targetLabel": "DJI_20260521130228_0012_D",
+      "yaw": 30.02,
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_DCDF7031_C5B5_2DA4_41A7_D120203BB341",
+      "pitch": -8.09
+    },
+    {
+      "source": "panorama_D218CCB6_C4AD_36AC_41D1_1361951BE8E8",
+      "label": "Boulevard Corner Arcadia",
+      "target": "panorama_D61FF245_C370_59AF_41E4_4F9B77D44204",
+      "targetLabel": "Boulevard B",
+      "yaw": -85.51,
+      "bearing": -5.877392606643136,
+      "delta": 2.3673926066430795,
+      "overlay": "overlay_D36FAF60_C493_33A4_41CD_DEFDBED500FF",
+      "pitch": -23.4
+    },
+    {
+      "source": "panorama_D218CCB6_C4AD_36AC_41D1_1361951BE8E8",
+      "label": "Boulevard Corner Arcadia",
+      "target": "panorama_D410B54F_C373_DBBB_41E0_65D6E2677004",
+      "targetLabel": "Arcadia Entrance",
+      "yaw": 179.86,
+      "bearing": -94.23639479905886,
+      "delta": -3.903605200941115,
+      "overlay": "overlay_DCD92825_C493_3DAC_41E2_75C359F2FB79",
+      "pitch": -21.02
+    },
+    {
+      "source": "panorama_BDD653D5_BD84_97DF_41E5_8A02F3488CE6",
+      "label": "Swimming Pool",
+      "target": "panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045",
+      "targetLabel": "Entrance Club House",
+      "yaw": -87.9,
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_ACA97A76_BDEB_0431_41CE_1C95BF0181C6",
+      "pitch": -3.06
+    },
+    {
+      "source": "panorama_BDD66892_BD84_B055_41E2_428D9FA3FD1F",
+      "label": "Cinema Room",
+      "target": "panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045",
+      "targetLabel": "Entrance Club House",
+      "yaw": 44.44,
+      "bearing": null,
+      "delta": null,
+      "overlay": "overlay_AD983FA7_BDE5_1CDF_41D5_7484CC18D6C2",
+      "pitch": 2.31
+    }
+  ],
+  "panoramas": [
+    {
+      "id": "panorama_BDD6290C_BD84_B04D_41D8_5A63452A8DFB",
+      "label": "Int 7",
+      "thumbnail": "media/panorama_BDD6290C_BD84_B04D_41D8_5A63452A8DFB_t.jpg"
+    },
+    {
+      "id": "panorama_D61FF245_C370_59AF_41E4_4F9B77D44204",
+      "label": "Boulevard B",
+      "thumbnail": "media/panorama_D61FF245_C370_59AF_41E4_4F9B77D44204_t.webp"
+    },
+    {
+      "id": "panorama_B7BC5E8D_BA9C_1D50_41E0_5356BE539A67",
+      "label": "Park Near Clubhouse",
+      "thumbnail": "media/panorama_B7BC5E8D_BA9C_1D50_41E0_5356BE539A67_t.jpg"
+    },
+    {
+      "id": "panorama_D73F4122_C3F0_7BE5_41E1_C8423B04CA07",
+      "label": "Junction A",
+      "thumbnail": "media/panorama_D73F4122_C3F0_7BE5_41E1_C8423B04CA07_t.webp"
+    },
+    {
+      "id": "panorama_B69AA859_BB50_BF47_41E5_0EF6B7537875",
+      "label": "Junction C",
+      "thumbnail": "media/panorama_B69AA859_BB50_BF47_41E5_0EF6B7537875_t.jpg"
+    },
+    {
+      "id": "panorama_B67EE91C_BB51_7EFE_41C1_9656F25D7F9D",
+      "label": "Corner Behind Club House",
+      "thumbnail": "media/panorama_B67EE91C_BB51_7EFE_41C1_9656F25D7F9D_t.jpg"
+    },
+    {
+      "id": "panorama_D5607026_C493_2DAC_41CF_282947461FEE",
+      "label": "Boulevard Near Park",
+      "thumbnail": "media/panorama_D5607026_C493_2DAC_41CF_282947461FEE_t.webp"
+    },
+    {
+      "id": "panorama_B50680D9_BB50_EF46_41D7_C4DFCC6CE678",
+      "label": "Road Near Kost Eksklusif",
+      "thumbnail": "media/panorama_B50680D9_BB50_EF46_41D7_C4DFCC6CE678_t.jpg"
+    },
+    {
+      "id": "panorama_BDD63E94_BD84_905D_41C2_1384FE72245D",
+      "label": "Meering Room",
+      "thumbnail": "media/panorama_BDD63E94_BD84_905D_41C2_1384FE72245D_t.jpg"
+    },
+    {
+      "id": "panorama_DB22DFCA_C370_66A5_41A6_2F0CF6E6E27B",
+      "label": "2nd Floor Junction",
+      "thumbnail": "media/panorama_DB22DFCA_C370_66A5_41A6_2F0CF6E6E27B_t.webp"
+    },
+    {
+      "id": "panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108",
+      "label": "Entrance",
+      "thumbnail": "media/panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108_t.webp"
+    },
+    {
+      "id": "panorama_D17C6699_C4EF_5564_41E6_3541207B1453",
+      "label": "Kost Eklusif Corner",
+      "thumbnail": "media/panorama_D17C6699_C4EF_5564_41E6_3541207B1453_t.webp"
+    },
+    {
+      "id": "panorama_DEA66F5A_C351_A7A5_41DA_29F1F0AF6E76",
+      "label": "Gym Area",
+      "thumbnail": "media/panorama_DEA66F5A_C351_A7A5_41DA_29F1F0AF6E76_t.webp"
+    },
+    {
+      "id": "panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045",
+      "label": "Entrance Club House",
+      "thumbnail": "media/panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045_t.jpg"
+    },
+    {
+      "id": "panorama_C9A24A47_C47C_FDEC_41DA_811C8EC63CE9",
+      "label": "Junction B",
+      "thumbnail": "media/panorama_C9A24A47_C47C_FDEC_41DA_811C8EC63CE9_t.webp"
+    },
+    {
+      "id": "panorama_D3A46579_C330_7A67_41E3_32A506968BD8",
+      "label": "Entrace Gate",
+      "thumbnail": "media/panorama_D3A46579_C330_7A67_41E3_32A506968BD8_t.jpg"
+    },
+    {
+      "id": "panorama_B6828E17_BB50_D2CB_41C1_F4AC0CC32FB8",
+      "label": "Corner Near Kost Eksklusif",
+      "thumbnail": "media/panorama_B6828E17_BB50_D2CB_41C1_F4AC0CC32FB8_t.jpg"
+    },
+    {
+      "id": "panorama_D0CF9223_C330_B9EB_41D3_04C0498C7725",
+      "label": "Corner A",
+      "thumbnail": "media/panorama_D0CF9223_C330_B9EB_41D3_04C0498C7725_t.webp"
+    },
+    {
+      "id": "panorama_D00CF0D2_C351_FAA5_41C4_B4B394FEA783",
+      "label": "Boulevard A",
+      "thumbnail": "media/panorama_D00CF0D2_C351_FAA5_41C4_B4B394FEA783_t.webp"
+    },
+    {
+      "id": "panorama_D2996BA6_C4AD_32AD_41CE_F81E45806414",
+      "label": "Mini Market",
+      "thumbnail": "media/panorama_D2996BA6_C4AD_32AD_41CE_F81E45806414_t.webp"
+    },
+    {
+      "id": "panorama_BDD64947_BD84_F03B_41D0_E507DD81FC2D",
+      "label": "Laundry Room",
+      "thumbnail": "media/panorama_BDD64947_BD84_F03B_41D0_E507DD81FC2D_t.jpg"
+    },
+    {
+      "id": "panorama_DC921183_C5B3_2F64_41E4_9FC1B0478D65",
+      "label": "DJI_20260521130228_0012_D",
+      "thumbnail": "media/panorama_DC921183_C5B3_2F64_41E4_9FC1B0478D65_t.webp"
+    },
+    {
+      "id": "panorama_D410B54F_C373_DBBB_41E0_65D6E2677004",
+      "label": "Arcadia Entrance",
+      "thumbnail": "media/panorama_D410B54F_C373_DBBB_41E0_65D6E2677004_t.webp"
+    },
+    {
+      "id": "panorama_DDBCBE51_C46D_35E7_41CB_9C1171193F3E",
+      "label": "DJI_20260521125642_0004_D",
+      "thumbnail": "media/panorama_DDBCBE51_C46D_35E7_41CB_9C1171193F3E_t.webp"
+    },
+    {
+      "id": "panorama_D218CCB6_C4AD_36AC_41D1_1361951BE8E8",
+      "label": "Boulevard Corner Arcadia",
+      "thumbnail": "media/panorama_D218CCB6_C4AD_36AC_41D1_1361951BE8E8_t.webp"
+    },
+    {
+      "id": "panorama_BDD653D5_BD84_97DF_41E5_8A02F3488CE6",
+      "label": "Swimming Pool",
+      "thumbnail": "media/panorama_BDD653D5_BD84_97DF_41E5_8A02F3488CE6_t.jpg"
+    },
+    {
+      "id": "panorama_BDD66892_BD84_B055_41E2_428D9FA3FD1F",
+      "label": "Cinema Room",
+      "thumbnail": "media/panorama_BDD66892_BD84_B055_41E2_428D9FA3FD1F_t.jpg"
+    }
+  ]
+}
