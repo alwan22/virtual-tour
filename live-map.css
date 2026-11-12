@@ -1,0 +1,372 @@
+/* ==========================================================================
+   ATLAS ARCADIA — ARCHITECTURAL LIVE MAP
+   Design Philosophy: Restrained Minimalism · Architectural Precision · Functional Luxury
+   Presentation Layer Only · 100% Spatial Coordinates & Heading Preserved
+   ========================================================================== */
+
+.live-map {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 1050;
+  box-sizing: border-box;
+  width: 320px;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  background: #211c17;
+  color: #f1e9dc;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  transition:
+    width 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    padding 0.22s ease,
+    border-radius 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.live-map [hidden] {
+  display: none !important;
+}
+
+/* Enlarged architectural inspection state */
+.live-map.is-expanded-size:not(.is-collapsed) {
+  width: clamp(340px, 34vw, 420px);
+}
+
+.live-map-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.live-map-top-bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.live-map-toggle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+  padding: 0 0 12px;
+  border: none;
+  border-bottom: 1px solid rgba(241, 233, 220, 0.08);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: color 0.18s ease;
+}
+
+.live-map-pin-icon {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  fill: none;
+  stroke: #d6b474;
+  stroke-width: 1.8;
+  stroke-linejoin: round;
+}
+
+.live-map-toggle:focus-visible,
+.live-map-size-btn:focus-visible {
+  outline: 2px solid #d6b474;
+  outline-offset: 2px;
+}
+
+.live-map-location {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Metadata: 11-12px, sans-serif uppercase */
+.live-map-location-caption {
+  color: #a99f92;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+}
+
+/* Location title: 20-22px, serif font */
+#live-map-label {
+  font-family: Georgia, 'Times New Roman', 'Playfair Display', serif;
+  font-style: normal;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: #f1e9dc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.live-map-minimize-pill {
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  margin-top: 1px;
+  border-radius: 4px;
+  background: transparent;
+  border: none;
+  color: #a99f92;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.18s ease, background 0.18s ease;
+}
+
+.live-map-toggle:hover .live-map-minimize-pill {
+  color: #f1e9dc;
+  background: #302820;
+}
+
+.live-map-minimize-pill svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.live-map-icon-chevron {
+  display: none;
+}
+
+/* Collapsed State (Compact Location Indicator) */
+.live-map.is-collapsed {
+  width: 240px;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.live-map.is-collapsed .live-map-toggle {
+  align-items: center;
+  padding: 0;
+  border-bottom: none;
+  gap: 10px;
+}
+
+.live-map.is-collapsed .live-map-pin-icon {
+  margin-top: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.live-map.is-collapsed .live-map-location-caption {
+  display: none;
+}
+
+.live-map.is-collapsed #live-map-label {
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.live-map.is-collapsed .live-map-minimize-pill {
+  width: 24px;
+  height: 24px;
+  margin-top: 0;
+}
+
+.live-map.is-collapsed .live-map-icon-minus {
+  display: none;
+}
+
+.live-map.is-collapsed .live-map-icon-chevron {
+  display: block;
+}
+
+#live-map-content:not([hidden]) {
+  animation: liveMapReveal 0.22s ease-out;
+}
+
+@keyframes liveMapReveal {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* IMPORTANT: Keep padding: 0 on .live-map-frame so .live-map-destinations (inset: 0)
+   aligns 100% with the SVG viewBox coordinates. */
+.live-map-frame {
+  position: relative;
+  width: 100%;
+  margin: 10px auto 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  overflow: visible;
+}
+
+.live-map-plan {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.live-map-guides {
+  display: none;
+}
+
+.live-map-destination[data-scene-id="panorama_D3A46579_C330_7A67_41E3_32A506968BD8"]::before {
+  transform: translate(11px, 12px);
+}
+
+.live-map-destination[data-scene-id="panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045"]::before {
+  opacity: 0;
+}
+
+.live-map-destinations {
+  position: absolute;
+  inset: 0;
+}
+
+.live-map-destination {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* Prompt: Titik navigasi putih berukuran kecil */
+.live-map-destination::before {
+  content: '';
+  width: 5.5px;
+  height: 5.5px;
+  border: none;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: none;
+  transition: transform 0.18s ease, background 0.18s ease, opacity 0.18s ease;
+}
+
+.live-map-destination[aria-current="location"]::before {
+  opacity: 0;
+}
+
+.live-map-destination:is(:hover, :focus-visible)::before {
+  background: #d6b474;
+  transform: scale(1.4);
+}
+
+.live-map-destination:is(:hover, :focus-visible) {
+  z-index: 2;
+}
+
+.live-map-destination:focus-visible {
+  outline: 2px solid #d6b474;
+  outline-offset: 1px;
+}
+
+/* Prompt: Label Clubhouse menggunakan teks sederhana, tanpa pill atau kartu emas */
+.live-map-clubhouse-bg {
+  display: none !important;
+}
+
+.live-map-clubhouse-label {
+  fill: #d9d0c4;
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-style: normal;
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+#live-map-marker {
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Prompt: Marker lokasi aktif emas solid dengan satu indikator lingkaran tipis.
+   Hindari glow pada marker dan efek animasi dekoratif. */
+.live-map-halo-outer {
+  display: none !important;
+}
+
+.live-map-halo {
+  fill: none;
+  stroke: #d6b474;
+  stroke-width: 3;
+}
+
+.live-map-pin-core {
+  fill: #d6b474;
+}
+
+#live-map-heading {
+  fill: #d6b474;
+  stroke: none;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 100ms linear;
+}
+
+.live-map-feedback {
+  margin: 6px 2px 0;
+  color: #d6b474;
+  font-size: 11px;
+}
+
+.live-map-feedback:empty {
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .live-map,
+  .live-map.is-expanded-size:not(.is-collapsed) {
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    width: min(280px, calc(100vw - 24px));
+    padding: 12px;
+  }
+
+  .live-map.is-collapsed {
+    width: min(210px, calc(100vw - 24px));
+    padding: 8px 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-map,
+  .live-map-frame,
+  #live-map-content:not([hidden]),
+  #live-map-marker,
+  #live-map-heading {
+    transition: none !important;
+    animation: none !important;
+  }
+}

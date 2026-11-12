@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="165 205 945 760">
+  <!-- Architectural Site Plan for Atlas Arcadia: Neutral Gray Surface #4F4E49 -->
+  <defs>
+    <linearGradient id="roads" x2="0" y2="1">
+      <stop stop-color="#4f4e49"/>
+      <stop offset="1" stop-color="#43423e"/>
+    </linearGradient>
+    <linearGradient id="blocks" x2="0" y2="1">
+      <stop stop-color="#5a5954"/>
+      <stop offset="1" stop-color="#4f4e49"/>
+    </linearGradient>
+  </defs>
+  <path d="M987 245 1033 246 1077 802 738 804 756 936 570 946 464 915
+           302 915 269 710 193 689 217 610 260 556 271 660 517 648
+           522 533 468 534 450 471 556 471 554 522 783 518 781 396
+           909 401 907 241Z" fill="url(#roads)" stroke="#3a3935" stroke-width="4" stroke-linejoin="round"/>
+  <g fill="#3a3935" stroke="#3a3935" stroke-width="4" stroke-linejoin="round">
+    <path d="M193 689 217 610 260 556 271 660 371 651 376 706 272 717Z"/>
+    <path d="M375 662 520 660 519 704 377 714Z"/>
+    <path d="M454 470 554 471 554 523 783 517 781 397 806 401 813 540 522 558 522 532 468 534Z"/>
+    <path d="M910 241 944 245 950 395 917 399Z"/>
+    <path d="M466 896 568 886 571 937 478 936Z"/>
+  </g>
+  <g fill="url(#blocks)" stroke="#43423e" stroke-width="3" stroke-linejoin="round">
+    <path d="M979 302 1042 294 1076 800 1011 801Z"/>
+    <path d="M834 438 952 425 972 668 845 677Z"/>
+    <path d="M549 584 813 563 822 683 559 703Z"/>
+    <path d="M371 746 684 724 693 840 390 867Z"/>
+    <path d="M277 716 342 709 363 905 302 914Z"/>
+    <path d="M571 883 734 866 756 936 576 945Z"/>
+  </g>
+  <path d="M715 723 975 703 981 802 720 803Z" fill="#52504a" stroke="#3a3935" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M922 302 939 300 942 336 925 338Z" fill="#52504a" stroke="#3a3935" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Dotted route lines connecting tour spots: thin, architectural -->
+  <path d="M963 271 L967 416 L976 553 L990 689 L828 701 L704 711 L532 721 L443 725 L355 730 L370 888 L535 874 L711 858 L704 711 M967 416 L815 423 L822 544 L976 553 M822 544 L650 550 L532 721"
+        fill="none" stroke="rgba(241, 233, 220, 0.42)" stroke-width="3.5" stroke-dasharray="6 10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

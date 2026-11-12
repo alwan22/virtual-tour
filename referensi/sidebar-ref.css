@@ -1,0 +1,753 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+/* --- Quiet Luxury Design Variables --- */
+:root {
+  --ql-bg-glass: rgba(18, 20, 24, 0.86);
+  --ql-bg-glass-hover: rgba(255, 255, 255, 0.04);
+  --ql-bg-active-pill: rgba(255, 255, 255, 0.08);
+  --ql-bg-active-parent: rgba(255, 255, 255, 0.05);
+  --ql-border-subtle: rgba(255, 255, 255, 0.08);
+  --ql-border-active: rgba(255, 255, 255, 0.14);
+  --ql-border-focus: rgba(255, 255, 255, 0.22);
+  --ql-divider: rgba(255, 255, 255, 0.08);
+
+  --ql-text-primary: #F4F5F7;
+  --ql-text-secondary: rgba(244, 245, 247, 0.65);
+  --ql-text-muted: rgba(244, 245, 247, 0.45);
+  --ql-text-active: #FFFFFF;
+
+  --ql-brand-accent: #FFFFFF;
+  --ql-brand-accent-glow: rgba(255, 255, 255, 0.25);
+  --ql-brand-gold: #D4AF37;
+
+  --ql-radius-panel: 5px;
+  --ql-radius-item: 0px;
+  --ql-radius-pill: 0px;
+
+  --ql-sidebar-expanded-w: 328px;
+  --ql-sidebar-collapsed-w: 68px;
+
+  --ql-font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --ql-transition-spring: 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  --ql-transition-fast: 0.2s ease;
+}
+
+/* Base resets for sidebar */
+.ql-sidebar * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sidebar Wrapper */
+.ql-sidebar {
+  position: fixed;
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+  width: var(--ql-sidebar-expanded-w);
+  background: var(--ql-bg-glass);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid var(--ql-border-subtle);
+  border-radius: var(--ql-radius-panel);
+  box-shadow: 
+    0 24px 50px -10px rgba(0, 0, 0, 0.6),
+    0 10px 20px -5px rgba(0, 0, 0, 0.4),
+    inset 0 1px 1px rgba(255, 255, 255, 0.12);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  color: var(--ql-text-primary);
+  font-family: var(--ql-font-family);
+  user-select: none;
+  overflow: visible;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-24px);
+  pointer-events: none;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), width var(--ql-transition-spring), box-shadow var(--ql-transition-fast);
+}
+
+/* Shown after 3-second delay */
+.ql-sidebar.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Collapsed State modifier */
+.ql-sidebar.is-collapsed {
+  width: var(--ql-sidebar-collapsed-w);
+}
+
+/* Sidebar Header / Brand Area */
+.ql-sidebar-header {
+  height: 64px;
+  min-height: 64px;
+  padding: 16px 20px 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  position: relative;
+  width: 100%;
+  border-radius: var(--ql-radius-panel) var(--ql-radius-panel) 0 0;
+}
+
+.ql-brand-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.ql-brand-img {
+  height: 38px;
+  width: auto;
+  max-width: 170px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.35));
+  transition: height var(--ql-transition-fast), max-width var(--ql-transition-fast), transform var(--ql-transition-fast), opacity var(--ql-transition-fast);
+}
+
+.ql-brand-link:hover .ql-brand-img {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+/* Toggle centered on the right edge */
+.ql-toggle-btn {
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(18, 20, 24, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  color: var(--ql-text-secondary);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--ql-transition-fast), color var(--ql-transition-fast), border-color var(--ql-transition-fast), box-shadow var(--ql-transition-fast);
+  padding: 0;
+  z-index: 1001;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.55), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.ql-toggle-btn:hover {
+  background: rgba(30, 34, 42, 1);
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.65), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.ql-toggle-btn svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+  transition: transform var(--ql-transition-spring);
+}
+
+.ql-sidebar.is-collapsed .ql-toggle-btn svg {
+  transform: rotate(180deg);
+}
+
+/* Collapsed Header Adjustment */
+.ql-sidebar.is-collapsed .ql-sidebar-header {
+  padding: 18px 0 0 0;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Scrollable Navigation Body */
+.ql-sidebar-body {
+  flex: 1;
+  padding: 0 24px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+.ql-sidebar-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.ql-sidebar-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+
+.ql-sidebar.is-collapsed .ql-sidebar-body {
+  display: none;
+}
+
+/* Section Headings */
+.ql-section-heading {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ql-text-secondary);
+  opacity: 0.7;
+  margin-bottom: 14px;
+}
+
+.ql-sub-heading {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ql-text-muted);
+  margin-bottom: 10px;
+}
+
+/* Items Common Layout */
+.ql-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 12px;
+  border-radius: var(--ql-radius-item);
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--ql-text-secondary);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--ql-transition-fast);
+}
+
+.ql-nav-item:hover {
+  background: var(--ql-bg-glass-hover);
+  color: var(--ql-text-primary);
+}
+
+.ql-nav-item:focus-visible {
+  outline: none;
+  border-color: var(--ql-border-focus);
+}
+
+.ql-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.ql-item-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Zone Items */
+.ql-zone-block {
+  margin-bottom: 6px;
+}
+
+.ql-zone-header {
+  height: 44px;
+}
+
+.ql-zone-header .ql-chevron-left {
+  width: 14px;
+  height: 14px;
+  color: var(--ql-text-muted);
+  margin-right: 2px;
+  transition: transform var(--ql-transition-fast);
+}
+
+/* Accordion open state */
+.ql-zone-block.open .ql-zone-header {
+  background: var(--ql-bg-active-parent);
+  border-color: var(--ql-border-subtle);
+  color: var(--ql-text-active);
+  font-weight: 500;
+}
+
+.ql-zone-block.open .ql-chevron-left {
+  transform: rotate(90deg);
+  color: var(--ql-text-primary);
+}
+
+.ql-zone-block.open .ql-zone-chevron-right {
+  transform: rotate(90deg);
+}
+
+/* Zone Points (Child List) */
+.ql-zone-points {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  opacity: 0;
+  margin-left: 20px;
+  padding-left: 14px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ql-zone-block.open .ql-zone-points {
+  max-height: 400px;
+  opacity: 1;
+  padding-top: 6px;
+  padding-bottom: 8px;
+}
+
+/* Vertical Guide Line */
+.ql-zone-points::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 12px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Point Item */
+.ql-point-item {
+  height: 36px;
+  padding: 0 10px;
+  font-size: 12.5px;
+  color: var(--ql-text-secondary);
+  border-radius: 0px;
+  position: relative;
+}
+
+.ql-point-bullet {
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ql-bullet-ring {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  transition: all var(--ql-transition-fast);
+}
+
+.ql-point-item:hover .ql-bullet-ring {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Active Point Item (Subtle destination, no pill container, no orange) */
+.ql-point-item.active {
+  background: transparent;
+  border-color: transparent;
+  color: var(--ql-text-active);
+  font-weight: 500;
+}
+
+.ql-point-item.active .ql-bullet-ring {
+  width: 6px;
+  height: 6px;
+  border: none;
+  background: #FFFFFF;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+/* Separators between navigation sections */
+.ql-zone-section,
+.ql-explore-section {
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ql-divider);
+}
+
+.ql-explore-item {
+  height: 42px;
+  margin-bottom: 6px;
+}
+
+.ql-contact-section {
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ql-divider);
+}
+
+.ql-contact-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 122px), 1fr));
+  gap: 8px;
+}
+
+.ql-contact-link {
+  min-height: 48px;
+  padding: 6px 8px;
+  gap: 4px;
+  border-color: var(--ql-border-subtle);
+}
+
+.ql-contact-info {
+  display: grid;
+  gap: 2px;
+}
+
+.ql-contact-name {
+  color: var(--ql-text-primary);
+  font-weight: 600;
+}
+
+.ql-contact-number {
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.ql-contact-icon {
+  display: flex;
+  flex-shrink: 0;
+  color: #a3d7b1;
+}
+
+.ql-contact-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.ql-zone-badge {
+  flex-shrink: 0;
+  margin-left: 8px;
+  color: var(--ql-text-secondary);
+  font-size: 10px;
+}
+
+.ql-zone-note {
+  padding: 8px 0;
+  color: var(--ql-text-secondary);
+  font-size: 12px;
+}
+
+/* Bottom Controls (Sticky) */
+.ql-sidebar-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--ql-divider);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: rgba(14, 16, 20, 0.5);
+  border-radius: 0 0 var(--ql-radius-panel) var(--ql-radius-panel);
+}
+
+.ql-sidebar.is-collapsed .ql-sidebar-footer {
+  margin-top: auto;
+  padding: 16px 0;
+  flex-direction: column;
+  border-top: 1px solid var(--ql-divider);
+  border-radius: 0 0 var(--ql-radius-panel) var(--ql-radius-panel);
+}
+
+.ql-control-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--ql-radius-item);
+  padding: 8px 12px;
+  color: var(--ql-text-secondary);
+  font-family: inherit;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--ql-transition-fast);
+}
+
+.ql-control-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ql-text-primary);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.ql-control-btn.active {
+  color: var(--ql-text-active);
+  background: var(--ql-bg-active-pill);
+}
+
+.ql-control-btn svg {
+  width: 16px;
+  height: 16px;
+  opacity: 0.85;
+}
+
+.ql-sidebar.is-collapsed .ql-control-btn {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  justify-content: center;
+}
+
+.ql-sidebar.is-collapsed .ql-control-label {
+  display: none;
+}
+
+/* Explore dialog */
+.ql-modal-card::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.ql-modal-card {
+  box-sizing: border-box;
+  width: min(740px, calc(100% - 32px));
+  max-width: none;
+  max-height: calc(100% - 32px);
+  max-height: calc(100dvh - 32px);
+  padding: 0;
+  background: rgba(20, 22, 28, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--ql-radius-panel);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  color: #FFFFFF;
+  font-family: var(--ql-font-family);
+}
+
+.ql-modal-card[open] {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.ql-modal-header {
+  padding: 14px clamp(12px, 4vw, 24px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ql-modal-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.ql-modal-close {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.ql-modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+}
+
+.ql-modal-body {
+  padding: clamp(12px, 4vw, 24px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.ql-explore-note {
+  margin: 0;
+  color: var(--ql-text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.ql-preview-video,
+.ql-location-map,
+.ql-brochure-page img {
+  display: block;
+  width: 100%;
+  border-radius: 2px;
+}
+
+.ql-preview-video {
+  max-height: 60dvh;
+  background: #000;
+}
+
+.ql-preview-video + .ql-explore-note {
+  margin-top: 12px;
+}
+
+.ql-location-map {
+  height: min(450px, 60dvh);
+  border: 0;
+}
+
+.ql-brochure-pages {
+  display: grid;
+  gap: 18px;
+}
+
+.ql-brochure-page {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ql-brochure-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ql-brochure-page img {
+  height: auto;
+}
+
+.ql-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  color: #121418;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 0px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 10px;
+}
+
+.ql-download-btn:hover {
+  background: #F0F0F0;
+  transform: translateY(-1px);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 600px) {
+  .ql-sidebar {
+    top: 12px;
+    bottom: 12px;
+    left: 12px;
+    width: calc(100vw - 24px);
+    max-width: 328px;
+  }
+}
+
+/* Toast Notice Notification */
+.ql-toast-notice {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: rgba(18, 20, 24, 0.94);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #FFFFFF;
+  font-family: var(--ql-font-family);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 1px rgba(255, 255, 255, 0.2) inset;
+  z-index: 2500;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 460px;
+}
+
+.ql-toast-notice.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.ql-toast-icon {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+.ql-toast-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ql-toast-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+}
+
+.ql-toast-desc {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+}
+
+/* === Atlas Tour adaptation: 25-scene dynamic navigation === */
+.ql-sidebar { isolation: isolate; }
+.ql-brand-link { border: 0; background: transparent; width: 100%; padding: 0; }
+.ql-brand-text { font-size: 15px; font-weight: 650; letter-spacing: .015em; color: var(--ql-text-primary); text-align: center; transition: font-size var(--ql-transition-fast); }
+.ql-sidebar.has-logo .ql-brand-text { display: none; }
+.ql-brand-img { max-width: 180px; }
+.ql-sidebar.is-collapsed .ql-brand-text { max-width: calc(100% - 12px); font-size: 10px; line-height: 1.15; overflow-wrap: anywhere; }
+.ql-sidebar.is-collapsed .ql-brand-img { height: 26px; max-width: 46px; }
+.ql-chevron-left svg { width: 14px; height: 14px; }
+.ql-control-icon svg { display: block; width: 16px; height: 16px; }
+/* 17 panorama = 17 x 38px. Nilai lama 400px memangkas elemen. */
+.ql-zone-block.open .ql-zone-points { max-height: 1400px; }
+.ql-zone-points:not(.is-visible) { will-change: max-height; }
+.ql-sidebar [hidden] { display: none !important; }
+.ql-tour-status { font-size: 11px; line-height: 1.5; color: var(--ql-text-muted); margin: 12px 12px 0; }
+.ql-sidebar .ql-nav-item[aria-current="location"] { color: #fff; }
+.ql-sidebar :is(button, a):focus-visible { outline: 2px solid #eee; outline-offset: 2px; }
+.ql-toast-notice { width: max-content; max-width: min(460px, calc(100vw - 32px)); line-height: 1.5; }
+@media (max-width: 640px) {
+  .ql-sidebar { top: max(12px, env(safe-area-inset-top)); left: max(12px, env(safe-area-inset-left)); bottom: max(12px, env(safe-area-inset-bottom)); width: min(328px, calc(100vw - 24px)); }
+  .ql-sidebar.is-collapsed { width: var(--ql-sidebar-collapsed-w); }
+  .ql-sidebar-body { padding-left: 17px; padding-right: 17px; }
+  .ql-sidebar-footer { padding: 13px 17px; }
+}
+@media (max-height: 440px) {
+  .ql-sidebar { top: 6px; bottom: 6px; }
+  .ql-sidebar-header { min-height: 46px; height: 46px; padding-top: 5px; margin-bottom: 10px; }
+  .ql-sidebar-footer { padding-top: 6px; padding-bottom: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ql-sidebar, .ql-zone-points, .ql-toast-notice { transition: none !important; }
+}

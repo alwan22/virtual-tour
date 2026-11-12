@@ -1,0 +1,51 @@
+#: locale=en
+
+## Hotspot
+
+### Tooltip
+HotspotPanoramaOverlayArea_DC1173E5_C46D_D2AC_41E4_C257B04AB755.toolTip = ATLAS ARCADIA
+HotspotPanoramaOverlayArea_B296EEE1_BDE7_1C53_41E0_981C03A92236.toolTip = Cinema Room
+
+## Media
+
+### Audio
+audiores_E6DCECF4_F7B0_FF89_41E4_71D9B269654A.mp3Url = media/audio_E6AB1FFF_F7B0_9977_41E6_930DD28EFEDE_en.mp3
+
+### Subtitle
+panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108.subtitle = Entrance boulevard
+
+### Title
+panorama_DB22DFCA_C370_66A5_41A6_2F0CF6E6E27B.label = 2nd Floor Junction
+panorama_D410B54F_C373_DBBB_41E0_65D6E2677004.label = Arcadia Entrance
+panorama_D00CF0D2_C351_FAA5_41C4_B4B394FEA783.label = Boulevard A
+panorama_D61FF245_C370_59AF_41E4_4F9B77D44204.label = Boulevard B
+panorama_D218CCB6_C4AD_36AC_41D1_1361951BE8E8.label = Boulevard Corner Arcadia
+panorama_D5607026_C493_2DAC_41CF_282947461FEE.label = Boulevard Near Park
+panorama_BDD66892_BD84_B055_41E2_428D9FA3FD1F.label = Cinema Room
+panorama_D0CF9223_C330_B9EB_41D3_04C0498C7725.label = Corner A
+panorama_B67EE91C_BB51_7EFE_41C1_9656F25D7F9D.label = Corner Behind Club House
+panorama_B6828E17_BB50_D2CB_41C1_F4AC0CC32FB8.label = Corner Near Kost Eksklusif
+panorama_DDBCBE51_C46D_35E7_41CB_9C1171193F3E.label = DJI_20260521125642_0004_D
+panorama_DC921183_C5B3_2F64_41E4_9FC1B0478D65.label = DJI_20260521130228_0012_D
+panorama_D3A46579_C330_7A67_41E3_32A506968BD8.label = Entrace Gate
+panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108.label = Entrance
+panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045.label = Entrance Club House
+panorama_DEA66F5A_C351_A7A5_41DA_29F1F0AF6E76.label = Gym Area
+panorama_BDD6290C_BD84_B04D_41D8_5A63452A8DFB.label = Int 7
+panorama_D73F4122_C3F0_7BE5_41E1_C8423B04CA07.label = Junction A
+panorama_C9A24A47_C47C_FDEC_41DA_811C8EC63CE9.label = Junction B
+panorama_B69AA859_BB50_BF47_41E5_0EF6B7537875.label = Junction C
+panorama_D17C6699_C4EF_5564_41E6_3541207B1453.label = Kost Eklusif Corner
+panorama_BDD64947_BD84_F03B_41D0_E507DD81FC2D.label = Laundry Room
+panorama_BDD63E94_BD84_905D_41C2_1384FE72245D.label = Meering Room
+panorama_D2996BA6_C4AD_32AD_41CE_F81E45806414.label = Mini Market
+panorama_B7BC5E8D_BA9C_1D50_41E0_5356BE539A67.label = Park Near Clubhouse
+panorama_B50680D9_BB50_EF46_41D7_C4DFCC6CE678.label = Road Near Kost Eksklusif
+panorama_BDD653D5_BD84_97DF_41E5_8A02F3488CE6.label = Swimming Pool
+
+## Tour
+
+### Description
+
+### Title
+tour.name = Atlas Arcadia - Virtual Tour
