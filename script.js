@@ -4,7 +4,7 @@ if(!Object['hasOwnProperty']('values')){Object['values']=function(c){return Obje
 //
 
 var tour;
-var devicesUrl = {"general":"script_general.js?v=atlas-v4"};
+var devicesUrl = {"general":"script_general.js?v=atlas-v5"};
 
 (function()
 {
