@@ -14,10 +14,12 @@
       }, { capture: true });
     </script>
     <link rel="preload" href="assets/fonts/FunnelDisplay.ttf" as="font" type="font/ttf" crossorigin>
-    <script src="preloader.js?v=atlas-v1" defer></script>
-    <script src="lib/tdvplayer.js?v=1794309155502" defer></script>
-    <link rel="preload" href="locale/en.txt?v=1794309155502" as="fetch" crossorigin="anonymous"/>
-	<link rel="preload" href="script.js?v=atlas-v6" as="script"/>
+    <link rel="stylesheet" href="promo-video.css?v=20261120k">
+    <script src="promo-video.js?v=20261120e" defer></script>
+    <script src="preloader.js?v=atlas-v2" defer></script>
+    <script src="lib/tdvplayer.js?v=atlas-v2" defer></script>
+    <link rel="preload" href="locale/en.txt?labels=20261120a&amp;v=1794309155502" as="fetch" crossorigin="anonymous"/>
+	<link rel="preload" href="script.js?v=atlas-v10" as="script"/>
 		<link rel="preload" href="media/panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108_0/r/2/0_0.webp?v=1794309155502" as="image"/>
 	<link rel="preload" href="media/panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108_0/l/2/0_0.webp?v=1794309155502" as="image"/>
 	<link rel="preload" href="media/panorama_D231ED8B_C350_6ABB_41E2_5BD236FEE108_0/u/2/0_0.webp?v=1794309155502" as="image"/>
@@ -41,7 +43,7 @@
 	<meta name="twitter:image" content="https://360plus.id/arcadia-tour/socialThumbnail.jpg?v=1794309155502"/>
 	<meta name="description" content="Virtual Tour"/>
 	<meta name="theme-color" content="#211C17"/>
-    <script src="script.js?v=atlas-v6" defer></script>
+    <script src="script.js?v=atlas-v10" defer></script>
     <style type="text/css">
         html, body { height:100%; width:100%; height:100vh; width:100vw; margin:0; padding:0; overflow:hidden; }
         .fill-viewport { position:fixed; top:0; left:0; right:0; bottom:0; padding:0; margin:0; overflow: hidden; }
@@ -99,6 +101,7 @@
         }
     </style>
     <link rel="stylesheet" href="sidebar.css?v=20261112b">
+    <link rel="stylesheet" href="brochure-gallery.css?v=20261120b">
     <link rel="stylesheet" href="live-map.css?v=20261112b">
     
 </head>
@@ -117,6 +120,12 @@
       </div>
     </div>
     <div id="viewer" class="fill-viewport" aria-label="Panorama interaktif Atlas Arcadia"></div>
+    <dialog class="promo-video" id="promo-video-dialog" aria-label="Video promosi Atlas Arcadia">
+      <button class="promo-video-close" id="promo-video-close" type="button" aria-label="Tutup video dan lanjutkan tur" autofocus>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <iframe id="promo-video-player" width="560" height="315" data-src="https://www.youtube.com/embed/pU-4Lh4_-oM?si=rmH8qzEu18v-4dNj&amp;autoplay=1&amp;mute=1&amp;playsinline=1" title="Video promosi Atlas Arcadia di YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </dialog>
     <aside class="live-map" id="live-map" aria-label="Peta live Atlas Arcadia" hidden>
       <header class="live-map-header">
         <div class="live-map-top-bar">
@@ -190,7 +199,8 @@
         ]
       };
     </script>
-    <script src="sidebar.js?v=20261112b" defer></script>
+    <script src="brochure-gallery.js?v=20261120b" defer></script>
+    <script src="sidebar.js?v=20261120b" defer></script>
     <script src="live-map.js?v=20261112c" defer></script>
 </body>
 </html>

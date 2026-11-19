@@ -4,7 +4,14 @@ if(!Object['hasOwnProperty']('values')){Object['values']=function(c){return Obje
 //
 
 var tour;
-var devicesUrl = {"general":"script_general.js?v=atlas-v5"};
+var promoPlaybackBlocked = !!document.getElementById('promo-video-dialog');
+var promoPausedTour = false;
+var promoPreviousMute = null;
+// The planet reveal uses a separate display-transition clock in 3DVista.
+window.AtlasTourPlaybackGate = {
+    isBlocked: function () { return promoPlaybackBlocked; }
+};
+var devicesUrl = {"general":"script_general.js?v=atlas-v7"};
 
 (function()
 {
@@ -35,6 +42,33 @@ var devicesUrl = {"general":"script_general.js?v=atlas-v5"};
     el.parentNode.insertBefore(link, el);
 })();
 
+function setPromoPlaybackBlocked(blocked)
+{
+    promoPlaybackBlocked = blocked;
+    if (!tour) return;
+
+    var root = tour._getRootPlayer();
+    if (blocked) {
+        if (root && promoPreviousMute === null) {
+            promoPreviousMute = !!root.get('mute');
+            root.set('mute', true);
+        }
+        if (!tour.isPaused) {
+            promoPausedTour = true;
+            tour.pause();
+        }
+    } else {
+        if (root && promoPreviousMute !== null) {
+            root.set('mute', promoPreviousMute);
+            promoPreviousMute = null;
+        }
+        if (promoPausedTour) {
+            promoPausedTour = false;
+            tour.resume();
+        }
+    }
+}
+
 function loadTour()
 {
     if(tour) return;
@@ -52,6 +86,12 @@ function loadTour()
     settings.set(TDV.PlayerSettings.QUERY_STRING_PARAMETERS, 'v=1794309155502');
 
     tour = new TDV.Tour(settings, devicesUrl);
+    // A browser gesture or external resume request must not bypass the popup.
+    var originalResume = tour.resume;
+    tour.resume = function () {
+        if (promoPlaybackBlocked) return;
+        return originalResume.apply(this, arguments);
+    };
     tour.bind(TDV.Tour.EVENT_TOUR_INITIALIZED, onVirtualTourInit);
     tour.bind(TDV.Tour.EVENT_TOUR_LOADED, onVirtualTourLoaded);
     tour.bind(TDV.Tour.EVENT_TOUR_ENDED, onVirtualTourEnded);
@@ -76,6 +116,8 @@ function resumeTour()
 
 function onVirtualTourInit()
 {
+    // Pause before the first panorama starts; 3DVista applies this when ready.
+    if (promoPlaybackBlocked) setPromoPlaybackBlocked(true);
     tour.player.bindOnObjectsOf('PanoramaPlayer', 'loadingProgress', onPanoramaLoading, tour, true);
     var updateTexts = function() {
         document.title = this.trans("tour.name")
@@ -242,6 +284,7 @@ document.addEventListener('DOMContentLoaded', onLoad);
     return window.tour.player.getById('MainViewerPanoramaPlayer');
   }
   window.AtlasTourBridge = {
+    setPromoPlaybackBlocked: setPromoPlaybackBlocked,
     isReady: function () {
       return !!(window.tour && window.tour.isInitialized && rootPlayer() && scenes().length);
     },

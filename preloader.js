@@ -5,7 +5,12 @@
   var query = new URLSearchParams(location.search);
   if (location.protocol !== 'file:' && Array.from(query.keys()).some(function (key) { return key.toLowerCase() === 'skip-loading'; })) {
     curtain.hidden = true;
+    window.addEventListener('atlas-tour:ready', loadingFinished, { once: true });
     return;
+  }
+
+  function loadingFinished() {
+    window.dispatchEvent(new Event('atlas-tour:loading-finished'));
   }
 
   var value = document.getElementById('tour-preloader-value');
@@ -45,6 +50,7 @@
   function slideUp() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || typeof curtain.animate !== 'function') {
       curtain.hidden = true;
+      loadingFinished();
       return;
     }
 
@@ -57,6 +63,7 @@
     function hide() {
       curtain.hidden = true;
       animation.cancel();
+      loadingFinished();
     }
   }
 

@@ -146,6 +146,8 @@
     if (!isOpen || !root) return;
     const dialog = get('ql-explore-dialog');
     if (dialog && dialog.open) return;
+    const promoDialog = get('promo-video-dialog');
+    if (promoDialog && promoDialog.open) return;
 
     if (event.key === 'Escape') {
       event.preventDefault();
@@ -429,31 +431,20 @@
   }
 
   function showBrochure(body) {
-    const pages = el('div', 'ql-brochure-pages');
-    (config.brochurePages || []).forEach((page) => {
-      const url = urlIfSafe(page.url);
-      if (!url) return;
-      const link = el('a', 'ql-brochure-page');
-      link.href = url;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      const img = el('img');
-      img.alt = page.label || 'Halaman brosur';
-      img.loading = 'lazy';
-      img.src = url;
-      link.appendChild(el('span', 'ql-brochure-label', page.label || 'Halaman brosur'));
-      link.appendChild(img);
-      pages.appendChild(link);
-    });
+    const pages = (config.brochurePages || []).map((page) => ({
+      url: urlIfSafe(page.url), label: page.label || 'Halaman brosur'
+    })).filter((page) => page.url);
+    const dispose = pages.length ? window.AtlasBrochureGallery.mount(body, pages) : null;
+    if (!pages.length) body.appendChild(el('p', 'ql-explore-note', 'E-Brosur belum tersedia.'));
     const url = urlIfSafe(config.brochureUrl);
     if (url) {
       const link = el('a', 'ql-download-btn', 'Buka brosur digital');
       link.href = url;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
-      pages.appendChild(link);
+      body.appendChild(link);
     }
-    body.appendChild(pages.childElementCount ? pages : el('p', 'ql-explore-note', 'E-Brosur belum tersedia.'));
+    return dispose;
   }
 
   function showContacts(body) {
@@ -489,20 +480,28 @@
     document.body.appendChild(dialog);
     const title = get('ql-explore-title');
     const body = dialog.querySelector('.ql-modal-body');
+    let disposeContent = null;
     dialog.addEventListener('close', () => {
+      if (disposeContent) disposeContent();
+      disposeContent = null;
       body.replaceChildren();
+      dialog.classList.remove('has-brochure-gallery');
       if (mobileQuery.matches && !isOpen) focusElement(get('ql-sidebar-toggle'));
     });
 
     function openDialog(label, renderer) {
       title.textContent = label;
+      if (disposeContent) disposeContent();
+      disposeContent = null;
       body.replaceChildren();
-      renderer(body);
+      dialog.classList.toggle('has-brochure-gallery', renderer === showBrochure);
+      disposeContent = renderer(body);
       if (mobileQuery.matches) setOpen(false, { focus: false });
       dialog.showModal();
     }
 
     const items = [
+      { label: 'Jelajahi', icon: icons.video, promo: true },
       { label: 'Map Lokasi', icon: icons.map, render: showMap },
       { label: 'E-Brosur', icon: icons.brochure, render: showBrochure }
     ];
@@ -512,7 +511,7 @@
       const button = el('button', 'ql-explore-item');
       button.type = 'button';
       button.setAttribute('aria-haspopup', 'dialog');
-      button.setAttribute('aria-controls', dialog.id);
+      button.setAttribute('aria-controls', item.promo ? 'promo-video-dialog' : dialog.id);
       const icon = el('span', 'ql-explore-icon');
       icon.innerHTML = item.icon;
       const arrow = el('span', 'ql-explore-arrow');
@@ -520,7 +519,17 @@
       button.appendChild(icon);
       button.appendChild(el('span', 'ql-explore-name', item.label));
       button.appendChild(arrow);
-      button.addEventListener('click', () => openDialog(item.label, item.render));
+      button.addEventListener('click', () => {
+        if (item.promo) {
+          if (mobileQuery.matches) {
+            setOpen(false, { focus: false });
+            focusElement(get('ql-sidebar-toggle'));
+          }
+          window.dispatchEvent(new Event('atlas-tour:open-promo'));
+        } else {
+          openDialog(item.label, item.render);
+        }
+      });
       get('ql-explore-links').appendChild(button);
     });
 
