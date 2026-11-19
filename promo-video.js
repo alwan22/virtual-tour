@@ -13,6 +13,9 @@
     if (!dialog.open || youtubePlayer || !window.YT || typeof window.YT.Player !== 'function') return;
     youtubePlayer = new window.YT.Player(video, {
       events: {
+        onReady: function (event) {
+          if (dialog.open && event.target === youtubePlayer) event.target.setVolume(50);
+        },
         onStateChange: function (event) {
           // Ignore callbacks from a previous opening of the popup.
           if (dialog.open && event.target === youtubePlayer && event.data === window.YT.PlayerState.ENDED) {
