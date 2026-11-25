@@ -11,7 +11,7 @@ var promoPreviousMute = null;
 window.AtlasTourPlaybackGate = {
     isBlocked: function () { return promoPlaybackBlocked; }
 };
-var devicesUrl = {"general":"script_general.js?v=atlas-v7"};
+var devicesUrl = {"general":"script_general.js?v=atlas-v8"};
 
 (function()
 {

@@ -42,6 +42,12 @@ panorama_D2996BA6_C4AD_32AD_41CE_F81E45806414.label = Mini Market
 panorama_B7BC5E8D_BA9C_1D50_41E0_5356BE539A67.label = Park Near Clubhouse
 panorama_B50680D9_BB50_EF46_41D7_C4DFCC6CE678.label = Road Near Kost Eksklusif
 panorama_BDD653D5_BD84_97DF_41E5_8A02F3488CE6.label = Swimming Pool
+panorama_KOS_LIVING_ROOM.label = Living Room
+panorama_KOS_BEDROOM_A.label = Bedroom A 1st Floor
+panorama_KOS_BEDROOM_B.label = Bedroom B 1st Floor
+panorama_KOS_2ND_FLOOR_JUNCTION.label = 2nd Floor Junction
+panorama_KOS_BEDROOM_C.label = Bedroom C 2nd Floor
+panorama_KOS_BEDROOM_D.label = Bedroom D 2nd Floor
 
 ## Tour
 

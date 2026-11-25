@@ -26,7 +26,8 @@
   const zones = [
     { id: 'aerial', label: 'Aerial' },
     { id: 'ground', label: 'Ground View' },
-    { id: 'interior', label: 'Interior' }
+    { id: 'interior', label: 'Interior Arcadia Clubhouse' },
+    { id: 'interior-kos', label: 'Interior Rumah Kos' }
   ];
 
   const icons = {

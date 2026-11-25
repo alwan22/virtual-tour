@@ -25,6 +25,7 @@
   };
   // Denah kawasan menunjukkan jejak Clubhouse, termasuk Mini Market.
   var clubhouse = [849, 753];
+  var rumahKos = [967, 416];
   var clubhouseEntrance = 'panorama_BDD65E1F_BD84_904B_41E5_40DCFD139045';
   // Geser tombol yang berdekatan agar mudah disentuh. Garis tetap menunjuk ke posisi denah.
   var pinOffsets = {
@@ -97,7 +98,7 @@
       var coordinates = scene.id === clubhouseEntrance ? clubhouse : exterior[scene.id];
       if (coordinates) addPin(scene, coordinates);
     });
-    [['interior', 'Interior'], ['aerial', 'Aerial']].forEach(function (group) {
+    [['interior', 'Interior Arcadia Clubhouse'], ['interior-kos', 'Interior Rumah Kos'], ['aerial', 'Aerial']].forEach(function (group) {
       var options = document.createElement('optgroup');
       options.label = group[1];
       scenes.filter(function (scene) { return scene.group === group[0]; }).forEach(function (scene) {
@@ -119,7 +120,9 @@
     if (view.id !== currentId) {
       var scene = bridge.getScenes().find(function (item) { return item.id === view.id; });
       if (!scene) return;
-      position = scene.group === 'interior' ? clubhouse : exterior[scene.id];
+      position = scene.group === 'interior' ? clubhouse
+        : scene.group === 'interior-kos' ? rumahKos
+        : exterior[scene.id];
       currentId = view.id;
       map.hidden = false;
       marker.setAttribute('visibility', position ? 'visible' : 'hidden');
@@ -132,7 +135,10 @@
       });
       switch (scene.group) {
         case 'interior':
-          detail.textContent = 'Interior · Penanda gedung Clubhouse';
+          detail.textContent = 'Interior Arcadia Clubhouse · Penanda gedung Clubhouse';
+          break;
+        case 'interior-kos':
+          detail.textContent = 'Interior Rumah Kos · Area Boulevard A';
           break;
         case 'aerial':
           detail.textContent = 'Tampilan udara · Denah kawasan';
